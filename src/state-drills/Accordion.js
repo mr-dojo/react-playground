@@ -5,7 +5,7 @@ export default class Accordion extends Component {
     sections: [] 
   };
   state = {
-    currentSectionIndex: 0
+    currentSectionIndex: Number,
   };
   handleButtonClick = (index) => {
     this.setState({ currentSectionIndex: index})
@@ -16,7 +16,7 @@ export default class Accordion extends Component {
         <button key={index} onClick={() => this.handleButtonClick(index)}>
           {section.title}
         </button>
-        {!!this.props.sections.length && this.renderContent(index)}
+        {!!this.props.sections.length || (this.state.currentSectionIndex >= 0 && this.renderContent(index))}
       </li>
       ))
     }  
