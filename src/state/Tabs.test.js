@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Tabs from './Tabs';
-import renderer from 'react-test-renderer';
 import {shallow} from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
