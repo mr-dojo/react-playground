@@ -14,13 +14,13 @@ export default class Accordion extends Component {
     return this.props.sections.map((section, index) => (
       <li>
         <button key={index} onClick={() => this.handleButtonClick(index)}>
-          {section.name}
+          {section.title}
         </button>
       </li>
       ))
     }  
   renderContent() {
-    const currentSection = this.props.section[this.state.currentSectionIndex]
+    const currentSection = this.props.sections[this.state.currentSectionIndex]
     return (
       <p className='content'>
         {currentSection.content}
@@ -29,10 +29,10 @@ export default class Accordion extends Component {
   }
   render() { 
     return (
-      <div>
+      <ul>
         {this.renderButtons()}
         {!!this.props.sections.length && this.renderContent()}
-      </div>
+      </ul>
     )
   }
 }

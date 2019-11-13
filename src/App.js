@@ -20,9 +20,9 @@ const sections = [
 class App extends Component {
   render() {
     return (
-      <ul>
+      <div>
         <Accordion sections={sections} />
-      </ul>
+      </div>
     );
   }
 }
